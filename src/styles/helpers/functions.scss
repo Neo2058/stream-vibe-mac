@@ -1,0 +1,30 @@
+@use 'constants' as *;
+@use 'sass:math';
+
+@function fluid ($max, $min, $isEndOfLaptop: false) {
+  $maxViewportWidth: $container-desktop-width;
+  $minViewportWidth: $container-mobile-width;
+
+  @if ($isEndOfLaptop) {
+    $minViewportWidth: $container-laptop-width;
+  }
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  @if $maxWidth == $minWidth {
+    @warn "Максимальная и минимальная ширина области просмотра ('#{$maxViewportWidth}' и '#{$minViewportWidth}') совпадают. Вернуть статическое значение.";
+    @return #{$maxSize * 1rem};
+  }
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  @return clamp(
+    #{$minSize * 1rem} #{','}
+    #{$yAxisIntersection * 1rem} #{' + '} #{$slope * 100vw} #{','}
+    #{$maxSize * 1rem}
+  );
+}
