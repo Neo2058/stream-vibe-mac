@@ -8,6 +8,7 @@ const Section = (props) => {
     titleId,
     description,
     actions,
+    isActionsHiddenOnMobile = false,
     children,
   } = props
 
@@ -28,7 +29,12 @@ const Section = (props) => {
             )}
         </div>
         {actions && (
-          <div className="section__actions">{actions}</div>
+          <div className={classNames('section__actions', {
+            'hidden-mobile': isActionsHiddenOnMobile,
+          })}
+          >
+            {actions}
+          </div>
         )}
       </header>
       <div className="section__body">
