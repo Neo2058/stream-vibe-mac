@@ -1,32 +1,27 @@
 import './Footer.scss'
-import classNames from 'classnames'
-import Socials from "@/components/Socials/Socials.jsx";
+import Socials from '@/components/Socials'
 
-const Footer = (props) => {
-  const {
-    className,
-  } = props
-
+const Footer = () => {
   const menuItems = [
     {
       title: 'Home',
-      links: ['Categories', 'Devices', 'Pricing', 'FAQ']
+      links: ['Categories', 'Devices', 'Pricing', 'FAQ'],
     },
     {
       title: 'Movies',
-      links: ['Gernes', 'Trending', 'New Release', 'Popular']
+      links: ['Gernes', 'Trending', 'New Release', 'Popular'],
     },
     {
-      title: 'Shows',
-      links: ['Gernes', 'Trending', 'New Release', 'Popular']
+      title: 'Popular',
+      links: ['Gernes', 'Trending', 'New Release', 'Popular'],
     },
     {
       title: 'Support',
-      links: ['Contact Us']
+      links: ['Contact Us'],
     },
     {
       title: 'Subscription',
-      links: ['Plans', 'Features']
+      links: ['Plans', 'Features'],
     },
     {
       title: 'Connect With Us',
@@ -40,62 +35,46 @@ const Footer = (props) => {
           iconName: 'twitter',
         },
         {
-          label: 'Linkedin',
-          iconName: 'linkedin',
+          label: 'LinkedIn',
+          iconName: 'linked-in',
         },
       ]
-    }
+    },
   ]
 
   const extraLinks = ['Terms of Use', 'Privacy Policy', 'Cookie Policy']
 
   return (
-    <footer
-      className={classNames(className, 'footer')}
-    >
+    <footer className="footer">
       <div className="footer__inner container">
         <nav className="footer__menu">
-          {menuItems.map(({title, links, socialLinks}, index) => (
+          {menuItems.map(({ title, links, socialLinks }, index) => (
             <div className="footer__menu-column" key={index}>
-              <a
-                className="footer__menu-title h6"
-                href="/">
-                {title}
-            </a>
-                {links?.length > 0 && (
-                  <ul className="footer__menu-list">
-                    {links.map((link, index) => (
-                      <li className="footer__menu-item" key={index}>
-                        <a
-                          className="footer__menu-link"
-                          href="/"
-                        >
-                          {link}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              <a className="footer__menu-title h6" href="/">{title}</a>
+              {links?.length > 0 && (
+                <ul className="footer__menu-list">
+                  {links.map((link, index) => (
+                    <li className="footer__menu-item" key={index}>
+                      <a className="footer__menu-link" href="/">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
               {socialLinks?.length > 0 && (
-                <Socials
-                  className="footer__soc1als"
-                  links={socialLinks}
-                />
+                <Socials className="footer__soc1als" links={socialLinks} />
               )}
             </div>
           ))}
         </nav>
         <div className="footer__extra">
           <p className="footer__copyright">
-            @<time dateTime="2025">2025</time> streamvib, All Rights Reserved
+            @<time dateTime="2023">2023</time> streamvib, All Rights Reserved
           </p>
           <div className="footer__extra-links">
             {extraLinks.map((link, index) => (
-              <a
-                className="footer__extra-link"
-                href="/"
-                key={index}
-              >
+              <a className="footer__extra-link" href="/" key={index}>
                 {link}
               </a>
             ))}

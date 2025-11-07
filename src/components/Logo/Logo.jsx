@@ -2,12 +2,12 @@ import './Logo.scss'
 import classNames from 'classnames'
 
 const Logo = (props) => {
-  const title = 'Home'
-
   const {
     className,
     loading = 'lazy',
   } = props
+
+  const title = 'Home'
 
   return (
     <a
@@ -17,13 +17,14 @@ const Logo = (props) => {
       aria-label={title}
     >
       <img
-        src="/Logo.svg"
+        className="logo__image"
+        src="/logo.svg"
         alt=""
-        className="logo__img"
         width={199}
         height={60}
         loading={loading}
       />
+
     </a>
   )
 }

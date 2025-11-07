@@ -1,16 +1,10 @@
 import './Content.scss'
-import classNames from 'classnames'
 
 const Content = (props) => {
-  const {
-    className,
-    children,
-  } = props
+  const { children } = props
 
   return (
-    <main
-      className={classNames(className, 'content')}
-    >
+    <main className="content">
       {children}
     </main>
   )

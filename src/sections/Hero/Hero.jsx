@@ -1,20 +1,12 @@
 import './Hero.scss'
-import classNames from 'classnames'
-import Button from "@/components/Button/Button.jsx";
+import Button from '@/components/Button'
 
-const Hero = (props) => {
-  const {
-    className,
-  } = props
-
-  const playButtonTitle = 'Play Video'
+const Hero = () => {
   const titleId = 'hero-title'
+  const playButtonTitle = 'Play Video'
 
   return (
-    <section
-      className={classNames(className, 'hero')}
-      aria-labelledby={titleId}
-    >
+    <section className="hero" aria-labelledby={titleId}>
       <div className="hero__pano">
         <div className="hero__pano-inner container">
           <button
@@ -25,8 +17,8 @@ const Hero = (props) => {
           >
             <img
               className="hero__play-button-image"
-              src="/play.svg"
               alt=""
+              src="/play.svg"
               width={470}
               height={470}
             />
@@ -46,7 +38,6 @@ const Hero = (props) => {
             iconName="play"
             hasFillIcon
             label="Start Watching Now"
-
           />
         </div>
       </div>

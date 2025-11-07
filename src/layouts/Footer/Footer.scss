@@ -2,21 +2,20 @@
   background-color: var(--color-black-06);
 
   &__menu {
-    --footerMenuColumns : 6;
+    --footerMenuColumns: 6;
 
     display: grid;
     grid-template-columns: repeat(var(--footerMenuColumns), 1fr);
-
     gap: 30px fluid(30, 10);
     padding-block: fluid(100, 50);
     border-bottom: var(--border);
 
     @include laptop {
-      --footerMenuColumns : 3;
+      --footerMenuColumns: 3;
     }
 
     @include mobile {
-      --footerMenuColumns : 2;
+      --footerMenuColumns: 2;
     }
 
     &-column {
@@ -39,7 +38,7 @@
     justify-content: space-between;
     align-items: center;
     column-gap: 16px;
-    padding-top: fluid(24, 20, true);
+    padding-top: fluid-to-laptop(24, 20);
     padding-bottom: fluid(50, 20);
 
     @include mobile {

@@ -1,7 +1,6 @@
 import './CategoryCard.scss'
-import classNames from 'classnames'
-import {Image} from "minista";
-import Icon from "@/components/Icon/index.js";
+import { Image } from 'minista'
+import Icon from '@/components/Icon'
 
 const CategoryCard = (props) => {
   const {
@@ -10,10 +9,7 @@ const CategoryCard = (props) => {
   } = props
 
   return (
-    <a
-      className='category-card'
-      href="/movies"
-    >
+    <a className="category-card" href="/movies">
       <div className="category-card__images">
         {images.map((imgSrc, index) => (
           <Image

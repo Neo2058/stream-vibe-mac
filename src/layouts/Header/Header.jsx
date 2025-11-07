@@ -1,45 +1,42 @@
 import './Header.scss'
+import Logo from '@/components/Logo'
 import classNames from 'classnames'
-import Logo from "@/components/Logo/index.js";
-import Button from "@/components/Button/index.js";
-import BurgerButton from "@/components/BurgerButton/index.js";
+import Button from '@/components/Button'
+import BurgerButton from '@/components/BurgerButton'
 
 const Header = (props) => {
-  const menuItems = [
-    {
-      label: 'Home',
-      href: '/'
-    },
-    {
-      label: 'Movies & Shows',
-      href: '/movies'
-    },
-    {
-      label: 'Support',
-      href: '/support'
-    },
-    {
-      label: 'Subscriptions',
-      href: '/subscriptions'
-    },
-  ]
-
   const {
-    className,
     url,
     isFixed,
   } = props
+
+  const menuItems = [
+    {
+      label: 'Home',
+      href: '/',
+    },
+    {
+      label: 'Movies & Shows',
+      href: '/movies',
+    },
+    {
+      label: 'Support',
+      href: '/support',
+    },
+    {
+      label: 'Subscriptions',
+      href: '/subscriptions',
+    },
+  ]
 
   return (
     <header
       className={classNames('header', {
         'is-fixed': isFixed,
       })}
+      data-js-overlay-menu=""
     >
-      <div
-        className="header__inner container"
-        data-js-overlay-menu=""
-      >
+      <div className="header__inner container">
         <Logo
           className="header__logo"
           loading="eager"
@@ -50,16 +47,13 @@ const Header = (props) => {
         >
           <nav className="header__menu">
             <ul className="header__menu-list">
-              {menuItems.map(({label, href}, index) => (
-                <li
-                  className="header__menu-item"
-                  key={index}
-                >
+              {menuItems.map(({ label, href }, index) => (
+                <li className="header__menu-item" key={index}>
                   <a
-                    href={href}
                     className={classNames('header__menu-link', {
                       'is-active': href === url
                     })}
+                    href={href}
                   >
                     {label}
                   </a>
@@ -71,16 +65,16 @@ const Header = (props) => {
             <Button
               className="header__button"
               label="Search"
-              mode='transparent'
               isLabelHidden
+              mode="transparent"
               iconName="search"
             />
             <Button
               className="header__button"
               label="Notifications"
-              mode='transparent'
               isLabelHidden
-              iconName="notifications"
+              mode="transparent"
+              iconName="notification"
             />
           </div>
         </dialog>

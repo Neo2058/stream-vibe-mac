@@ -2,7 +2,7 @@
   @include flex-center(true);
 
   column-gap: 4px;
-  padding: fluid(18, 14, true) fluid(24, 20, true);
+  padding: fluid-to-laptop(18, 14) fluid-to-laptop(24, 20);
   font-weight: 600;
   color: var(--color-white);
   background-color: var(--color-red-45);
@@ -31,7 +31,7 @@
   }
 
   &:has(.button__icon:only-child) {
-    @include square(fluid(56, 44, true));
+    @include square(fluid-to-laptop(56, 44));
 
     padding: 0;
   }
@@ -43,7 +43,7 @@
       @include square(44px);
 
       .button__icon {
-        --iconSize: #{fluid(34, 24, true)};
+        --iconSize: #{fluid-to-laptop(34, 24)};
       }
     }
   }

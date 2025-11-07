@@ -1,4 +1,4 @@
-export class OverlayMenu {
+class OverlayMenu {
   selectors = {
     root: '[data-js-overlay-menu]',
     dialog: '[data-js-overlay-menu-dialog]',
@@ -21,9 +21,11 @@ export class OverlayMenu {
     this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
     this.dialogElement.open = !this.dialogElement.open
     document.documentElement.classList.toggle(this.stateClasses.isLock)
-}
+  }
 
   bindEvents() {
     this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
   }
 }
+
+export default OverlayMenu

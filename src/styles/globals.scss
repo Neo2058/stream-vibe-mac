@@ -70,14 +70,14 @@ input,
 textarea,
 select,
 svg * {
-  transition-duration: var(--transition-speed-02);
+  transition-duration: var(--transition-duration);
 }
 
 a {
   color: inherit;
 
   @include hover {
-    color: var(--color-red-45)
+    color: var(--color-red-45);
   }
 
   &[class] {
@@ -91,4 +91,10 @@ a {
 
 :has(.swiper) {
   min-width: 0;
+}
+
+.header,
+.content > *:not(:last-child),
+.footer {
+  display: none !important;
 }

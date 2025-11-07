@@ -31,15 +31,15 @@
     }
   }
 
-
   &__line {
     fill: none;
     stroke: var(--color-white);
     stroke-width: 6;
     stroke-linecap: round;
     stroke-dasharray: 60 207;
-    transition: stroke-dasharray var(--transition-speed-longer-04) cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      stroke-dasharray var(--transition-duration-longer) cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset var(--transition-duration-longer) cubic-bezier(0.4, 0, 0.2, 1);
 
     &--2 {
       stroke-dasharray: 60 60;

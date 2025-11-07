@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
 
-  &--tile{
-    column-gap: fluid(16, 12, true);
-    padding: fluid(16, 12, true);
+  &--tile {
+    column-gap: fluid-to-laptop(16, 12);
+    padding: fluid-to-laptop(16, 12);
     background-color: var(--color-black-06);
     border: var(--border);
     border-radius: var(--border-radius-l);
@@ -23,7 +23,7 @@
       height: 4px;
       background-color: var(--color-black-20);
       border-radius: 100px;
-      transition: var(--transition-speed-02);
+      transition-duration: var(--transition-duration);
 
       &.is-active {
         width: 23px;

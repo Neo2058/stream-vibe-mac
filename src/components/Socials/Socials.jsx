@@ -1,6 +1,6 @@
 import './Socials.scss'
 import classNames from 'classnames'
-import Button from "@/components/Button/Button.jsx";
+import Button from '@/components/Button'
 
 const Socials = (props) => {
   const {
@@ -13,7 +13,7 @@ const Socials = (props) => {
       className={classNames(className, 'soc1als')}
     >
       <ul className="soc1als__list">
-        {links.map(({label, iconName}, index) => (
+        {links.map(({ label, iconName }, index) => (
           <li className="soc1als__item" key={index}>
             <Button
               className="soc1als__link"

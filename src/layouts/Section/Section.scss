@@ -22,6 +22,6 @@
 
   &__info {
     display: grid;
-    row-gap: fluid(14, 10, true);
+    row-gap: fluid-to-laptop(14, 10);
   }
 }

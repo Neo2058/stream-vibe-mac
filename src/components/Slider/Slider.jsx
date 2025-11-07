@@ -1,43 +1,41 @@
 import 'swiper/css'
 import './Slider.scss'
-import SliderNavigation
-  from "@/components/Slider/components/SliderNavigation/index.js";
-import classNames from "classnames";
+import SliderNavigation from './components/SliderNavigation'
+import classNames from 'classnames'
 
 const defaultSliderParams = {
-    slidesPerView: 5,
-    slidesPerGroup: 5,
-    spaceBetween: 30,
-    breakpoints: {
-      0: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        spaceBetween: 20,
-      },
-      481: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        spaceBetween: 20,
-      },
-      1024: {
-        spaceBetween: 20,
-        allowTouchMove: false,
-      },
-      1441: {
-        spaceBetween: 30,
-        allowTouchMove: false,
-      }
-    }
+  slidesPerView: 5,
+  slidesPerGroup: 5,
+  spaceBetween: 30,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+    },
+    481: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 20,
+    },
+    1024: {
+      spaceBetween: 20,
+      allowTouchMove: false,
+    },
+    1441: {
+      spaceBetween: 30,
+      allowTouchMove: false,
+    },
+  }
 }
 
 const Slider = (props) => {
   const {
-    className,
     children,
     navigationTargetElementId = null,
     sliderParams = defaultSliderParams,
@@ -51,8 +49,8 @@ const Slider = (props) => {
         'slider--beyond-the-viewport-on-mobile-s': isBeyondTheViewportOnMobileS,
       })}
       data-js-slider={JSON.stringify({
-          sliderParams,
-          navigationTargetElementId,
+        sliderParams,
+        navigationTargetElementId,
       })}
     >
       <div className="slider__swiper swiper" data-js-slider-swiper="">

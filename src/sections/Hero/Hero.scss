@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: var(--container-padding-y);
+  padding-bottom: var(--section-padding-y);
   text-align: center;
 
   @include mobile {
@@ -15,34 +15,33 @@
 
     --heroGradientHeight: 67.5%;
 
-    --heroGradientTop: linear-gradient(
+    --heroGraidentTop: linear-gradient(
       to bottom,
       var(--heroGradientColorStart) 0%,
       var(--heroGradientColorEnd) 100%
-      ) 50% 0/100% var(--heroGradientHeight);
+    ) 50% 0/100% var(--heroGradientHeight);
 
-    --heroGradientBottom: linear-gradient(
-        to top,
-        var(--heroGradientColorStart) 0%,
-        var(--heroGradientColorEnd) 100%
+    --heroGraidentBottom: linear-gradient(
+      to top,
+      var(--heroGradientColorStart) 0%,
+      var(--heroGradientColorEnd) 100%
     ) 50% 101%/100% var(--heroGradientHeight);
 
-    @include flex-center();
+    @include flex-center;
 
     flex-grow: 1;
-
     padding-top: fluid(195, 150);
     padding-bottom: fluid(131, 50);
-
     background:
-      var(--heroGradientTop),
-      var(--heroGradientBottom),
-      url("../../assets/images/hero/bg.png") 50%/cover;
+      var(--heroGraidentTop),
+      var(--heroGraidentBottom),
+      url('../../assets/images/hero/bg.png') 50%/cover;
     background-repeat: no-repeat;
   }
 
   &__play-button {
     @include square(fluid(470, 200));
+
     padding: 0;
     background-color: transparent;
     border: none;
@@ -50,7 +49,7 @@
 
   &__title {
     margin-top: -0.5em;
-    margin-bottom: fluid(14, 10, true);
+    margin-bottom: fluid-to-laptop(14, 10);
   }
 
   &__description {
