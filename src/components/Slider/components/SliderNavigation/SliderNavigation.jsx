@@ -8,22 +8,28 @@ const SliderNavigation = (props) => {
     id,
     hasPagination = true,
     /**
-     * '' (default) | 'tile'
+     * '' (default) | 'tile' | 'rounded'
      */
     mode = '',
+    // '' (default) / 'abs-bottom
+    position = '',
+    isHiddenMobile,
+    buttonMode = 'black-10',
   } = props
 
   return (
     <div
       className={classNames(className, 'slider-navigation', {
         [`slider-navigation--${mode}`]: mode,
+        [`slider-navigation--${position}`]: position,
+        'hidden-mobile': isHiddenMobile,
       })}
       id={id}
       data-js-slider-navigation=""
     >
       <Button
         className="slider-navigation__arrow-button slider-navigation__arrow-button--previous"
-        mode="black-10"
+        mode={buttonMode}
         iconName="arrow-left"
         label="Previous slide"
         isLabelHidden
@@ -39,7 +45,7 @@ const SliderNavigation = (props) => {
       )}
       <Button
         className="slider-navigation__arrow-button slider-navigation__arrow-button--next"
-        mode="black-10"
+        mode={buttonMode}
         iconName="arrow-right"
         label="Next slide"
         isLabelHidden
